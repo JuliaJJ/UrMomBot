@@ -74,7 +74,7 @@ async def on_message(message):
   msg = message.content
     
   if any(word in msg for word in mom_words):
-    await message.channel.send(random.choice(mom_feels) + f', {message.author}.')
+    await message.channel.send(random.choice(mom_feels) + f', {message.author.display_name}.')
 
 
 client.run(TOKEN)
