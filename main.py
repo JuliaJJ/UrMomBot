@@ -3,9 +3,7 @@ import os
 import requests
 import json
 import random
-from dotenv import load_dotenv
 
-load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
