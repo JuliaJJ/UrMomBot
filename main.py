@@ -15,7 +15,7 @@ intents.messages = True
 client = commands.Bot(command_prefix="!",intents=intents)
 inter_client = InteractionClient(client)
 
-mom_words = ["ur mom", "ur mum", "your mom", "Ur mum", "Ur mom", "Your mom"]
+mom_words = ["ur mom", "ur mum", "your mom", "Ur mum", "Ur mom", "Your mom", "yer mum", "yer mom", "urmom", "urmum", "Yer mum", "Yer mom", "Urmum", "Urmom"]
 
 mom_feels = [
   "Ur mom just wants to spend time with you",
@@ -51,16 +51,28 @@ mom_feels = [
   "Ur mom knows you did your best",
   "Ur mom accepts who you are",
   "Ur mom admires your creativity",
+  "Ur mom still has that elementary school project",
   "Seeing you happy makes ur mom happy",
   "You make ur mom a better person",
   "Ur mom thinks you're a gift to those around you",
   "Ur mom appreciates your personality",
   "You are the reason ur mom is smiling today",
-  "Ur mom loves to tell everyon how amazing you are",
+  "Ur mom loves to tell everyone how amazing you are",
   "You are the apple of ur mom's eye",
   "You bring a smile to ur mom's face",
   "Giving you compliments is ur mom's favorite hobby",
-  "Ur mom likes that color on you"
+  "Ur mom likes that color on you",
+  "Your dance moves don't embarrass ur mom",
+  "You are ur mom's favorite",
+  "Ur mom is proud of how hard you work",
+  "Ur mom loves listening to your stories",
+  "Ur mom is astounded by your creativity",
+  "Ur mom was happy to wake up with you in her family",
+  "Ur mom is humbled by your generosity",
+  "Ur mom loves it when you confide in her",
+  "Ur mom admires how compassionate and trustworthy you are",
+  "You always make your mom laugh",
+  "Ur mom has every confidence in you"
 ]
 
 @client.event
