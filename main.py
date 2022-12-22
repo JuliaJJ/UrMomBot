@@ -84,7 +84,7 @@ async def on_message(message):
 @inter_client.user_command(name="Get a Hug")
 async def hug(inter: ContextMenuInteraction):
     await inter.respond(
-        f"Ur Mom gave {inter.user} a big hug."
+        f"Ur Mom gave <@{inter.user.id}> a big hug."
     )
 
 client.run(TOKEN)
