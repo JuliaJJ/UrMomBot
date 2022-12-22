@@ -3,13 +3,17 @@ import os
 import requests
 import json
 import random
+from discord.ext import commands
+from dislash import InteractionClient, ContextMenuInteraction
 
 TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = discord.Client(intents=intents)
+#client = discord.Client(intents=intents)
+client = commands.Bot(command_prefix="!",intents=intents)
+inter_client = InteractionClient(client)
 
 mom_words = ["ur mom", "ur mum", "your mom", "Ur mum", "Ur mom", "Your mom"]
 
@@ -76,5 +80,11 @@ async def on_message(message):
   if any(word in msg for word in mom_words):
     await message.channel.send(random.choice(mom_feels) + f', <@{message.author.id}>.', allowed_mentions=discord.AllowedMentions.none())
 
+
+@inter_client.user_command(name="Get a Hug")
+async def hug(inter: ContextMenuInteraction):
+    await inter.respond(
+        f"Ur Mom gave {inter.user} a big hug."
+    )
 
 client.run(TOKEN)
