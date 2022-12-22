@@ -81,7 +81,7 @@ async def on_message(message):
     await message.channel.send(random.choice(mom_feels) + f', <@{message.author.id}>.', allowed_mentions=discord.AllowedMentions.none())
 
 
-@inter_client.user_command(name="Get a Hug")
+@inter_client.user_command(name="Give a Hug")
 async def hug(inter: ContextMenuInteraction):
     await inter.respond(
         f"Ur Mom gave <@{inter.user.id}> a big hug."
