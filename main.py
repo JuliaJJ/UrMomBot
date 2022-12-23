@@ -102,7 +102,7 @@ async def hug(inter: ContextMenuInteraction):
 @inter_client.user_command(name="Send a Message")
 async def hug(inter: ContextMenuInteraction):
     await inter.respond(
-        random.choice(mom_feels) + f', <@{message.author.id}>.', allowed_mentions=discord.AllowedMentions.none()
+        random.choice(mom_feels) + f', <@{inter.user.id}>.'
     )
 
 client.run(TOKEN)
