@@ -99,4 +99,10 @@ async def hug(inter: ContextMenuInteraction):
         f"Ur Mom gave <@{inter.user.id}> a big hug."
     )
 
+@inter_client.user_command(name="Send a Message")
+async def hug(inter: ContextMenuInteraction):
+    await inter.respond(
+        random.choice(mom_feels) + f', <@{message.author.id}>.', allowed_mentions=discord.AllowedMentions.none()
+    )
+
 client.run(TOKEN)
