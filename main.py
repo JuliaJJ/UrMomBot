@@ -75,6 +75,68 @@ mom_feels = [
   "Ur mom has every confidence in you"
 ]
 
+mom_gifts = [
+  "https://tenor.com/bdTRO.gif",
+  "https://tenor.com/bFMLK.gif",
+  "https://tenor.com/yET5.gif",
+  "https://tenor.com/bgaJe.gif",
+  "https://tenor.com/bkvmR.gif",
+  "https://tenor.com/bu8Vr.gif",
+  "https://tenor.com/FE2y.gif",
+  "https://tenor.com/Urnp.gif",
+  "https://tenor.com/00Zv.gif",
+  "https://tenor.com/bWzhr.gif",
+  "https://tenor.com/bNRcX.gif",
+  "https://tenor.com/bXdaA.gif",
+  "https://tenor.com/bXbTq.gif",
+  "https://tenor.com/bV5Cp.gif",
+  "https://tenor.com/bkO36.gif",
+  "https://tenor.com/taT9.gif",
+  "https://tenor.com/bmhi9.gif",
+  "https://tenor.com/baWEe.gif",
+  "https://tenor.com/2OU8.gif",
+  "https://tenor.com/VDwQ.gif",
+  "https://tenor.com/biged.gif",
+  "https://tenor.com/21rI.gif",
+  "https://tenor.com/bnIIU.gif",
+  "https://tenor.com/bftF1.gif",
+  "https://tenor.com/uLdh.gif",
+  "https://tenor.com/sMMI.gif",
+  "https://tenor.com/bSkat.gif",
+  "https://tenor.com/bqOH4.gif",
+  "https://tenor.com/bT0s1.gif",
+  "https://tenor.com/bjTCy.gif",
+  "https://tenor.com/bzo5S.gif",
+  "https://tenor.com/7RJP.gif",
+  "https://tenor.com/yHIe.gif",
+  "https://tenor.com/bWM6c.gif",
+  "https://tenor.com/bWobN.gif",
+  "https://tenor.com/6qd1.gif",
+  "https://tenor.com/blzp8.gif",
+  "https://tenor.com/bGW6z.gif",
+  "https://tenor.com/bbDUw.gif",
+  "https://tenor.com/bUem4.gif",
+  "https://tenor.com/V8fb.gif",
+  "https://tenor.com/bJogI.gif",
+  "https://tenor.com/7mR2.gif",
+  "https://tenor.com/bUx9m.gif",
+  "https://tenor.com/bjBwN.gif",
+  "https://tenor.com/bcVPo.gif",
+  "https://tenor.com/bcpzQ.gif",
+  "https://tenor.com/byFwC.gif",
+  "https://tenor.com/bxtcg.gif",
+  "https://tenor.com/bvEbm.gif",
+  "https://tenor.com/sGLw.gif",
+  "https://tenor.com/wSij.gif",
+  "https://tenor.com/1YgY.gif",
+  "https://tenor.com/S5Gk.gif",
+  "https://tenor.com/vV9z.gif",
+  "https://tenor.com/ysrD.gif",
+  "https://tenor.com/bzE9T.gif",
+  "https://tenor.com/bxarN.gif",
+  "https://tenor.com/bzsvV.gif"
+]
+
 @client.event
 
 async def on_ready():
@@ -93,7 +155,7 @@ async def on_message(message):
     await message.channel.send(random.choice(mom_feels) + f', <@{message.author.id}>.', allowed_mentions=discord.AllowedMentions.none())
 
 
-@inter_client.user_command(name="Give a Hug")
+@inter_client.user_command(name="Share a Hug")
 async def hug(inter: ContextMenuInteraction):
     await inter.respond(
         f"Ur Mom gave <@{inter.user.id}> a big hug."
@@ -103,6 +165,13 @@ async def hug(inter: ContextMenuInteraction):
 async def message(inter: ContextMenuInteraction):
     await inter.respond(
         random.choice(mom_feels) + f', <@{inter.user.id}>.'
+    )
+
+@inter_client.user_command(name="Give a GIFt")
+async def gift(inter: ContextMenuInteraction):
+    await inter.respond(
+        f"Ur Mom has a GIFt for you, <@{inter.user.id}>.", 
+        random.choice(mom_gifts)
     )
 
 client.run(TOKEN)
