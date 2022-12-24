@@ -170,8 +170,7 @@ async def message(inter: ContextMenuInteraction):
 @inter_client.user_command(name="Give a GIFt")
 async def gift(inter: ContextMenuInteraction):
     await inter.respond(
-        f"Ur Mom has a GIFt for you, <@{inter.user.id}>.", 
-        random.choice(mom_gifts)
+        f"Ur Mom has a GIFt for you, <@{inter.user.id}>.\n" + random.choice(mom_gifts)
     )
 
 client.run(TOKEN)
