@@ -100,7 +100,7 @@ async def hug(inter: ContextMenuInteraction):
     )
 
 @inter_client.user_command(name="Send a Message")
-async def hug(inter: ContextMenuInteraction):
+async def message(inter: ContextMenuInteraction):
     await inter.respond(
         random.choice(mom_feels) + f', <@{inter.user.id}>.'
     )
