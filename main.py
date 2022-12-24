@@ -169,9 +169,9 @@ async def message(inter: ContextMenuInteraction):
 
 @inter_client.user_command(name="Give a GIFt")
 async def gift(inter: ContextMenuInteraction):
-    embed=discord.Embed(color=0xFF5733)
+    embed=discord.Embed()
     embed.set_image(url=random.choice(mom_gifts))
-    embed.set_author(name=inter.user.display_name, icon_url=inter.user.avatar_url)
+   #embed.set_author(name=inter.user.display_name, icon_url=inter.user.avatar_url)
     await inter.respond(
       f"Ur Mom has a GIFt for you, <@{inter.user.id}>.",
       embed=embed
