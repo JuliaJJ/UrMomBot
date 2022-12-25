@@ -177,7 +177,7 @@ async def on_message(message):
   if message.author == client.user:
     return
 
-  msg = message.content
+  msg = message.content.lower()
     
   if any(word in msg for word in mom_words):
     await message.channel.send(random.choice(mom_feels) + f', <@{message.author.id}>.', allowed_mentions=discord.AllowedMentions.none())
