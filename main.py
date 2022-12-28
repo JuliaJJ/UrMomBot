@@ -15,7 +15,7 @@ intents.messages = True
 client = commands.Bot(command_prefix="!",intents=intents)
 inter_client = InteractionClient(client)
 
-mom_words = ["ur mom", "ur mum", "your mom", "yer mum", "yer mom", "urmom", "urmum"]
+mom_words = ["ur mom", "ur mum", "your mom", "yer mum", "yer mom", "urmom", "urmum", "joe mama"]
 
 mom_feels = [
   "Ur mom just wants to spend time with you",
