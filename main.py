@@ -216,7 +216,7 @@ async def gift(inter: ContextMenuInteraction):
 async def share_hug(inter):
     user = user
     await inter.reply(
-      f"Ur Mom gave <@{inter.user.id}> a big hug."
+      f"Ur Mom gave <@{user.id}> a big hug."
     )
 
 client.run(TOKEN)
