@@ -207,20 +207,20 @@ async def gift(inter: ContextMenuInteraction):
     )
 
 @inter_client.message_command(name="Share a Hug")
-async def hug(inter: ContextMenuInteraction):
+async def hug_reply(inter: ContextMenuInteraction):
     if inter.message.content:
       await inter.respond(
           f"Ur Mom gave <@{inter.user.id}> a big hug."
       )
 
 @inter_client.message_command(name="Send a Message")
-async def message(inter: ContextMenuInteraction):
+async def message_reply(inter: ContextMenuInteraction):
     await inter.respond(
         random.choice(mom_feels) + f', <@{inter.user.id}>.'
     )
 
 @inter_client.message_command(name="Give a GIFt")
-async def gift(inter: ContextMenuInteraction):
+async def gift_reply(inter: ContextMenuInteraction):
     embed=discord.Embed()
     embed.set_image(url=random.choice(mom_gifts))
    #embed.set_author(name=inter.user.display_name, icon_url=inter.user.avatar_url)
