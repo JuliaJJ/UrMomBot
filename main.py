@@ -219,6 +219,19 @@ async def share_hug(inter, user=None):
       f"Ur Mom gave <@{user.id}> a big hug."
     )
 
+@inter_client.slash_command(
+  description="Send a message from Ur Mom",
+  options=[
+      Option("user", "Enter the user", OptionType.USER, required=True)
+  ]
+)
+
+async def send_message(inter, user=None):
+    user = user or inter.author
+    await inter.reply(
+      random.choice(mom_feels) + f', <@{user.id}>.'
+    )
+
 client.run(TOKEN)
 
 
