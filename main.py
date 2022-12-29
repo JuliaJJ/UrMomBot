@@ -209,7 +209,7 @@ async def gift(inter: ContextMenuInteraction):
 @inter_client.slash_command(description="Share a hug from Ur Mom")
 async def share_hug(inter):
     await inter.reply(
-      f"Ur Mom gave <@{inter.user.id}> a big hug."
+      f"Ur Mom gave <@{inter.author.id}> a big hug."
     )
 
 client.run(TOKEN)
