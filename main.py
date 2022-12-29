@@ -217,7 +217,7 @@ async def hug_reply(inter: ContextMenuInteraction):
 async def message_reply(inter: ContextMenuInteraction):
     if inter.message.content:
       await inter.respond(
-          random.choice(mom_feels) + f', <@{inter.user.id}>.'
+          random.choice(mom_feels) + f', <@{inter.message.author.id}>.'
       )
 
 @inter_client.message_command(name="Reply With a GIFt")
@@ -227,7 +227,7 @@ async def gift_reply(inter: ContextMenuInteraction):
    #embed.set_author(name=inter.user.display_name, icon_url=inter.user.avatar_url)
     if inter.message.content:
       await inter.respond(
-        f"Ur Mom has a GIFt for you, <@{inter.user.id}>.",
+        f"Ur Mom has a GIFt for you, <@{inter.message.author.id}>.",
         embed=embed
       )
 
