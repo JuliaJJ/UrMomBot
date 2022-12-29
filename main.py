@@ -208,9 +208,10 @@ async def gift(inter: ContextMenuInteraction):
 
 @inter_client.message_command(name="Share a Hug")
 async def hug(inter: ContextMenuInteraction):
-    await inter.respond(
-        f"Ur Mom gave <@{inter.user.id}> a big hug."
-    )
+    if inter.message.content:
+      await inter.respond(
+          f"Ur Mom gave <@{inter.user.id}> a big hug."
+      )
 
 @inter_client.message_command(name="Send a Message")
 async def message(inter: ContextMenuInteraction):
