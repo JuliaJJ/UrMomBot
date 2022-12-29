@@ -12,8 +12,9 @@ intents = discord.Intents.default()
 intents.messages = True
 
 #client = discord.Client(intents=intents)
-client = commands.Bot(command_prefix="!",intents=intents)
+client = commands.Bot(command_prefix="/",intents=intents)
 inter_client = InteractionClient(client)
+
 
 mom_words = ["ur mom", "ur mum", "your mom", "yer mum", "yer mom", "urmom", "urmum", "joe mama"]
 
@@ -203,6 +204,12 @@ async def gift(inter: ContextMenuInteraction):
     await inter.respond(
       f"Ur Mom has a GIFt for you, <@{inter.user.id}>.",
       embed=embed
+    )
+
+@client.slash_command(name="share_hug")
+async def share_hug(ctx):
+    await ctx.respond(
+      f"Ur Mom gave <@{client.user.id}> a big hug."
     )
 
 client.run(TOKEN)
