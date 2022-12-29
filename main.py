@@ -232,6 +232,22 @@ async def send_message(inter, user=None):
       random.choice(mom_feels) + f', <@{user.id}>.'
     )
 
+@inter_client.slash_command(
+  description="Give a GIFt from Ur Mom",
+  options=[
+      Option("user", "Enter the user", OptionType.USER, required=True)
+  ]
+)
+
+async def give_gift(inter, user=None):
+    user = user or inter.author
+    embed=discord.Embed()
+    embed.set_image(url=random.choice(mom_gifts))
+    await inter.reply(
+      f"Ur Mom has a GIFt for you, <@{user.id}>.",
+      embed=embed
+    )
+
 client.run(TOKEN)
 
 
