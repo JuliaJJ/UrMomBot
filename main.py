@@ -213,7 +213,7 @@ async def gift(inter: ContextMenuInteraction):
   ]
 )
 
-async def share_hug(inter):
+async def share_hug(inter, user):
     user = user
     await inter.reply(
       f"Ur Mom gave <@{inter.user.id}> a big hug."
