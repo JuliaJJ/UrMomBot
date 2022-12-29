@@ -215,19 +215,21 @@ async def hug_reply(inter: ContextMenuInteraction):
 
 @inter_client.message_command(name="Reply With a Message")
 async def message_reply(inter: ContextMenuInteraction):
-    await inter.respond(
-        random.choice(mom_feels) + f', <@{inter.user.id}>.'
-    )
+    if inter.message.content:
+      await inter.respond(
+          random.choice(mom_feels) + f', <@{inter.user.id}>.'
+      )
 
 @inter_client.message_command(name="Reply With a GIFt")
 async def gift_reply(inter: ContextMenuInteraction):
     embed=discord.Embed()
     embed.set_image(url=random.choice(mom_gifts))
    #embed.set_author(name=inter.user.display_name, icon_url=inter.user.avatar_url)
-    await inter.respond(
-      f"Ur Mom has a GIFt for you, <@{inter.user.id}>.",
-      embed=embed
-    )
+    if inter.message.content:
+      await inter.respond(
+        f"Ur Mom has a GIFt for you, <@{inter.user.id}>.",
+        embed=embed
+      )
 
 @inter_client.slash_command(
   description="Share a hug from Ur Mom",
