@@ -12,7 +12,7 @@ intents = discord.Intents.default()
 intents.messages = True
 
 #client = discord.Client(intents=intents)
-client = discord.Bot(command_prefix="!", intents=intents)
+client = commands.Bot(command_prefix="!", intents=intents)
 inter_client = InteractionClient(client)
 
 
