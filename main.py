@@ -4,7 +4,7 @@ import requests
 import json
 import random
 from discord.ext import commands
-from dislash import InteractionClient, ContextMenuInteraction
+from dislash import InteractionClient, ContextMenuInteraction, Option, OptionType
 
 TOKEN = os.getenv('DISCORD_TOKEN')
 
@@ -206,10 +206,17 @@ async def gift(inter: ContextMenuInteraction):
       embed=embed
     )
 
-@inter_client.slash_command(description="Share a hug from Ur Mom")
-async def share_hug(inter):
+@inter_client.slash_command(
+  description="Share a hug from Ur Mom",
+  options=[
+      Option("user", "Enter the user", OptionType.USER, required=True)
+  ]
+)
+
+async def share_hug(inter, user=None):
+    user = user or inter.author
     await inter.reply(
-      f"Ur Mom gave <@{inter.author.id}> a big hug."
+      f"Ur Mom gave <@{inter.user.id}> a big hug."
     )
 
 client.run(TOKEN)
